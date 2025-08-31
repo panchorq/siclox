@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: siclox-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: RESEND_API_KEY
+        fromService:
+          name: resend
+          type: secret
+          property: apiKey
+    plan: free
+
+secrets:
+  - key: resend
+    name: Resend API Key
+    description: API Key para el servicio de Resend
+    generateValue: false
