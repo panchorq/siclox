@@ -1,9 +1,15 @@
 import express from 'express';
 import cors from 'cors';
 import { Resend } from 'resend';
+import { createClient } from '@supabase/supabase-js';
 import dotenv from 'dotenv';
 
 dotenv.config();
+
+// Configuración de Supabase
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -51,6 +57,23 @@ app.post('/api/send-email', async (req, res) => {
       return res.status(400).json({ error: 'Los campos nombre, email y mensaje son obligatorios' });
     }
 
+    // Guardar en Supabase
+    const { data: contactData, error: dbError } = await supabase
+      .from('contacts')
+      .insert([
+        { 
+          name: name,
+          email: email,
+          phone: phone || null
+        }
+      ]);
+
+    if (dbError) {
+      console.error('Error al guardar en Supabase:', dbError);
+      return res.status(500).json({ error: 'Error al guardar el contacto' });
+    }
+
+    // Enviar correo
     const resend = new Resend(process.env.RESEND_API_KEY);
     
     const { data, error } = await resend.emails.send({

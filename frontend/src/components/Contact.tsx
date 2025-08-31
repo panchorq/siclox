@@ -1,13 +1,17 @@
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
+    phone: '+56', // Valor por defecto para Chile
     message: ''
   });
+  
+  const [phoneValue, setPhoneValue] = useState('+56');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -15,6 +19,14 @@ const Contact = () => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
+    });
+  };
+  
+  const handlePhoneChange = (value: string = '') => {
+    setPhoneValue(value);
+    setFormData({
+      ...formData,
+      phone: value
     });
   };
 
@@ -106,7 +118,7 @@ const Contact = () => {
         </div>
 
         <div className="max-w-md mx-auto">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 [&_.PhoneInputInput]:w-full [&_.PhoneInputInput]:px-4 [&_.PhoneInputInput]:py-3 [&_.PhoneInputInput]:bg-transparent [&_.PhoneInputInput]:border-b [&_.PhoneInputInput]:border-border [&_.PhoneInputInput]:focus:border-foreground [&_.PhoneInputInput]:outline-none [&_.PhoneInputInput]:transition-colors [&_.PhoneInputInput]:placeholder:text-muted-foreground [&_.PhoneInputInput]:text-foreground [&_.PhoneInputCountry]:mr-2">
             <div>
               <input
                 type="text"
@@ -131,14 +143,20 @@ const Contact = () => {
               />
             </div>
 
-            <div>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full px-4 py-3 bg-transparent border-b border-border focus:border-foreground outline-none transition-colors placeholder:text-muted-foreground"
-                placeholder="Teléfono (opcional)"
+            <div className="phone-input-container">
+              <PhoneInput
+                international
+                defaultCountry="CL"
+                value={phoneValue}
+                onChange={handlePhoneChange}
+                placeholder="Ingresa tu teléfono"
+                className="w-full"
+                style={{
+                  '--PhoneInputCountrySelectArrow-color': 'hsl(var(--muted-foreground))',
+                  '--PhoneInput-color': 'hsl(var(--foreground))',
+                  '--PhoneInputCountryFlag-borderColor': 'hsl(var(--border))',
+                  '--PhoneInputCountrySelectArrow-opacity': '0.8',
+                }}
               />
             </div>
 
