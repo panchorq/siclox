@@ -54,7 +54,7 @@ app.post('/api/send-email', async (req, res) => {
     const resend = new Resend(process.env.RESEND_API_KEY);
     
     const { data, error } = await resend.emails.send({
-      from: 'SicloX <onboarding@resend.dev>',
+      from: 'Siclox <onboarding@resend.dev>',
       to: 'fcomlopezortiz@gmail.com',
       subject: `Nuevo mensaje de ${name}`,
       text: `
