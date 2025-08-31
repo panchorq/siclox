@@ -1,8 +1,9 @@
 services:
   - type: web
     name: siclox-backend
-    dockerfile: backend/Dockerfile
-    env: docker
+    env: node
+    buildCommand: cd .. && npm install && cd backend && npm install
+    startCommand: npm start
     envVars:
       - key: PORT
         value: 3002
@@ -14,8 +15,9 @@ services:
           type: env
           property: apiKey
     build:
-      docker:
-        dockerfile: backend/Dockerfile
+      npmInstall:
+        enabled: true
+        nodeVersion: 18.x  # Asegúrate de usar una versión compatible
     plan: free
 
 secrets:
