@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import PhoneInput from 'react-phone-number-input';
+import PhoneInputBase from 'react-phone-number-input/input';
 import 'react-phone-number-input/style.css';
+
+// Type assertion for PhoneInput
+const PhoneInput = PhoneInputBase as unknown as React.ComponentType<any>;
 
 const Contact = () => {
   const [formData, setFormData] = useState({
