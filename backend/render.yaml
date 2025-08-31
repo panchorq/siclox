@@ -2,18 +2,22 @@ services:
   - type: web
     name: siclox-backend
     env: node
-    buildCommand: npm install
-    startCommand: node server.js
+    buildCommand: cd .. && npm install && cd backend && npm install
+    startCommand: npm start
     envVars:
+      - key: PORT
+        value: 3002
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 10000
       - key: RESEND_API_KEY
         fromService:
           name: resend
-          type: secret
+          type: env
           property: apiKey
+    build:
+      npmInstall:
+        enabled: true
+        nodeVersion: 18.x  # Asegúrate de usar una versión compatible
     plan: free
 
 secrets:
