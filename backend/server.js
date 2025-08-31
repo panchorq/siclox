@@ -8,14 +8,19 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-// Configuración de CORS
+// Configuración de CORS (temporalmente permisiva para pruebas)
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://tudominio.com'] 
-    : 'http://localhost:5173',
+  origin: '*', // En producción, reemplazar con los dominios permitidos
   methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
+
+// Log de las solicitudes entrantes
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
+  next();
+});
 
 app.use(express.json());
 
