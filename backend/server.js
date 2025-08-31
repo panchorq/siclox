@@ -40,10 +40,10 @@ app.get('/api/health', (req, res) => {
 // Ruta para enviar correos
 app.post('/api/send-email', async (req, res) => {
   try {
-    const { name, email, message } = req.body;
+    const { name, email, phone = '', message } = req.body;
     
     if (!name || !email || !message) {
-      return res.status(400).json({ error: 'Todos los campos son obligatorios' });
+      return res.status(400).json({ error: 'Los campos nombre, email y mensaje son obligatorios' });
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY);
@@ -55,6 +55,7 @@ app.post('/api/send-email', async (req, res) => {
       text: `
         Nombre: ${name}
         Email: ${email}
+        ${phone ? `Teléfono: ${phone}\n` : ''}
         Mensaje: ${message}
       `
     });
