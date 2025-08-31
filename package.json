@@ -19,9 +19,14 @@
     "lint": "npm run lint --workspace=frontend"
   },
   "devDependencies": {
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
     "concurrently": "^9.2.1"
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "react-phone-number-input": "^3.4.12"
   }
 }
