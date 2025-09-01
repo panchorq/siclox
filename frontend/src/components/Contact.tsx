@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useToast } from '@/hooks/use-toast';
+import { toast } from 'sonner';
 import PhoneInputBase from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 
@@ -16,7 +16,7 @@ const Contact = () => {
   
   const [phoneValue, setPhoneValue] = useState('+56'); // Valor por defecto para Chile
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -35,28 +35,22 @@ const Contact = () => {
 
   const validateForm = () => {
     if (!formData.name.trim()) {
-      toast({
-        title: "Error",
-        description: "El nombre es requerido",
-        variant: "destructive"
+      toast.error("Error", {
+        description: "El nombre es requerido"
       });
       return false;
     }
     
     if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) {
-      toast({
-        title: "Error",
-        description: "El email debe ser válido",
-        variant: "destructive"
+      toast.error("Error", {
+        description: "El email debe ser válido"
       });
       return false;
     }
     
     if (!formData.message.trim()) {
-      toast({
-        title: "Error",
-        description: "El mensaje es requerido",
-        variant: "destructive"
+      toast.error("Error", {
+        description: "El mensaje es requerido"
       });
       return false;
     }
@@ -88,20 +82,20 @@ const Contact = () => {
       const data = await response.json();
       
       if (response.ok) {
-        toast({
-          title: "¡Mensaje enviado!",
-          description: "Nos pondremos en contacto contigo pronto.",
+        setIsSubmitted(true);
+        toast.success("¡Mensaje enviado con éxito!", {
+          description: "Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.",
+          duration: 5000,
         });
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormData({ name: '', email: '', phone: '+56', message: '' });
+        setPhoneValue('+56');
       } else {
         throw new Error(data.error || 'Error al enviar el mensaje');
       }
     } catch (error) {
       console.error('Error:', error);
-      toast({
-        title: "Error",
-        description: error instanceof Error ? error.message : "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.",
-        variant: "destructive"
+      toast.error("Error", {
+        description: error instanceof Error ? error.message : "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde."
       });
     } finally {
       setIsSubmitting(false);

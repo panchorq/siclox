@@ -21,8 +21,8 @@ export function Toaster() {
               {description && (
                 <ToastDescription>{description}</ToastDescription>
               )}
+              {action}
             </div>
-            {action}
             <ToastClose />
           </Toast>
         )
