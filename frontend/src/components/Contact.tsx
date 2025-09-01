@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import PhoneInputBase from 'react-phone-number-input/input';
+import PhoneInputBase from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 
 // Type assertion for PhoneInput
@@ -14,7 +14,7 @@ const Contact = () => {
     message: ''
   });
   
-  const [phoneValue, setPhoneValue] = useState('+56');
+  const [phoneValue, setPhoneValue] = useState('+56'); // Valor por defecto para Chile
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -146,7 +146,7 @@ const Contact = () => {
               />
             </div>
 
-            <div className="phone-input-container">
+            <div className="w-full">
               <PhoneInput
                 international
                 defaultCountry="CL"
@@ -159,7 +159,16 @@ const Contact = () => {
                   '--PhoneInput-color': 'hsl(var(--foreground))',
                   '--PhoneInputCountryFlag-borderColor': 'hsl(var(--border))',
                   '--PhoneInputCountrySelectArrow-opacity': '0.8',
+                  '--PhoneInputInput-color': 'hsl(var(--foreground))',
+                  '--PhoneInputInput-placeholder-color': 'hsl(var(--muted-foreground))',
+                  '--PhoneInputInput-background': 'transparent',
+                  '--PhoneInputInput-border': 'none',
                 }}
+                inputClassName="w-full px-4 py-3 bg-transparent border-b border-border focus:border-foreground outline-none transition-colors placeholder:text-muted-foreground text-foreground"
+                countrySelectProps={{
+                  className: '!bg-transparent !text-foreground !border-border',
+                }}
+                countryOptionsOrder={['CL', '|', '...']}
               />
             </div>
 
