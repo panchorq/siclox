@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "services": "Serviços",
+    "portfolio": "Portfólio",
+    "contact": "Contato",
+    "contactUs": "Fale Conosco"
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Preencha o formulário e entraremos em contato o mais breve possível.",
+    "name": "Nome",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "message": "Mensagem",
+    "send": "Enviar Mensagem",
+    "sending": "Enviando...",
+    "success": "Mensagem enviada com sucesso!",
+    "successMessage": "Recebemos sua mensagem e entraremos em contato em breve.",
+    "successDescription": "Recebemos sua mensagem e entraremos em contato em breve.",
+    "error": "Erro",
+    "errorMessage": "Por favor, tente novamente mais tarde.",
+    "errorDescription": "Algo deu errado. Por favor, tente novamente mais tarde.",
+    "required": "{{field}} é obrigatório",
+    "invalidEmail": "Por favor, insira um e-mail válido",
+    "messagePlaceholder": "Como podemos ajudar?",
+    "phonePlaceholder": "Digite seu número de telefone"
+  },
+  "languages": {
+    "en": "Inglês",
+    "es": "Espanhol",
+    "pt": "Português"
+  },
+  "hero": {
+    "title1": "Soluções Tecnológicas",
+    "title2": "Sob Medida",
+    "subtitle": "Serviços de TI, desenvolvimento web, marketing digital e automação para impulsionar seus negócios.",
+    "contact": "Entre em Contato",
+    "viewServices": "Ver Serviços"
+  },
+  "services": {
+    "title": "Serviços",
+    "items": [
+      {
+        "title": "Serviços de TI",
+        "description": "Suporte técnico, manutenção de equipamentos e soluções de infraestrutura de TI."
+      },
+      {
+        "title": "Desenvolvimento Web",
+        "description": "Sites modernos, responsivos e otimizados para motores de busca."
+      },
+      {
+        "title": "Marketing Digital",
+        "description": "Estratégias digitais para aumentar sua presença online."
+      },
+      {
+        "title": "Automação (n8n)",
+        "description": "Automação de processos de negócios para otimizar fluxos de trabalho."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Portfólio",
+    "items": [
+      {
+        "title": "E-commerce Moderno",
+        "description": "Plataforma de comércio eletrônico responsiva.",
+        "category": "Desenvolvimento Web"
+      },
+      {
+        "title": "Sistema CRM",
+        "description": "Gestão de relacionamento com o cliente automatizada.",
+        "category": "Automação"
+      },
+      {
+        "title": "Campanha Digital",
+        "description": "Estratégia abrangente de marketing digital.",
+        "category": "Marketing Digital"
+      },
+      {
+        "title": "Bots Automatizados",
+        "description": "Atendimento automatizado 24 horas por dia, 7 dias por semana.",
+        "category": "Automação"
+      }
+    ]
+  },
+  "footer": {
+    "brand": "siclox",
+    "links": {
+      "services": "Serviços",
+      "portfolio": "Portfólio",
+      "contact": "Contato"
+    },
+    "copyright": "© {{year}} siclox. Todos os direitos reservados."
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Opa! Página não encontrada",
+    "returnHome": "Voltar para a Página Inicial"
+  }
+}

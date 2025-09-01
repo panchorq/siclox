@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "portfolio": "Portfolio",
+    "contact": "Contacto",
+    "contactUs": "Contáctanos"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Completa el formulario y nos pondremos en contacto contigo lo antes posible.",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito!",
+    "successMessage": "Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.",
+    "successDescription": "Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.",
+    "error": "Error",
+    "errorMessage": "Por favor, inténtalo de nuevo más tarde.",
+    "errorDescription": "Algo salió mal. Por favor, inténtalo de nuevo más tarde.",
+    "required": "{{field}} es obligatorio",
+    "invalidEmail": "Por favor, introduce un correo electrónico válido",
+    "messagePlaceholder": "¿En qué podemos ayudarte?",
+    "phonePlaceholder": "Ingresa tu número de teléfono"
+  },
+  "languages": {
+    "en": "Inglés",
+    "es": "Español",
+    "pt": "Portugués"
+  },
+  "hero": {
+    "title1": "Soluciones Tecnológicas",
+    "title2": "a tu Medida",
+    "subtitle": "Servicios de informática, desarrollo web, marketing digital y automatización para potenciar tu negocio.",
+    "contact": "Contactar",
+    "viewServices": "Ver Servicios"
+  },
+  "services": {
+    "title": "Servicios",
+    "items": [
+      {
+        "title": "Servicios Informáticos",
+        "description": "Soporte técnico, mantenimiento de equipos y soluciones de infraestructura TI."
+      },
+      {
+        "title": "Desarrollo Web",
+        "description": "Sitios web modernos, responsivos y optimizados para motores de búsqueda."
+      },
+      {
+        "title": "Marketing Digital",
+        "description": "Estrategias digitales para aumentar tu presencia online."
+      },
+      {
+        "title": "Automatización (n8n)",
+        "description": "Automatización de procesos empresariales para optimizar workflows."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "items": [
+      {
+        "title": "E-commerce Moderno",
+        "description": "Plataforma de comercio electrónico responsiva.",
+        "category": "Desarrollo Web"
+      },
+      {
+        "title": "Sistema CRM",
+        "description": "Gestión de relaciones con clientes automatizada.",
+        "category": "Automatización"
+      },
+      {
+        "title": "Campaña Digital",
+        "description": "Estrategia integral de marketing digital.",
+        "category": "Marketing Digital"
+      },
+      {
+        "title": "Bots Automatizados",
+        "description": "Automatiza tu atención 24/7.",
+        "category": "Automatización"
+      }
+    ]
+  },
+  "footer": {
+    "brand": "siclox",
+    "links": {
+      "services": "Servicios",
+      "portfolio": "Portfolio",
+      "contact": "Contacto"
+    },
+    "copyright": "© {{year}} siclox. Todos los derechos reservados."
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "¡Ups! Página no encontrada",
+    "returnHome": "Volver al Inicio"
+  }
+}

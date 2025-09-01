@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "contactUs": "Contact Us"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Fill out the form and we'll get back to you as soon as possible.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "successMessage": "We've received your message and will get back to you soon.",
+    "successDescription": "We've received your message and will get back to you soon.",
+    "error": "Error",
+    "errorMessage": "Please try again later.",
+    "errorDescription": "Something went wrong. Please try again later.",
+    "required": "{{field}} is required",
+    "invalidEmail": "Please enter a valid email address",
+    "messagePlaceholder": "How can we help you?",
+    "phonePlaceholder": "Enter your phone number"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Spanish",
+    "pt": "Portuguese"
+  },
+  "hero": {
+    "title1": "Technological Solutions",
+    "title2": "Tailored for You",
+    "subtitle": "IT services, web development, digital marketing, and automation to boost your business.",
+    "contact": "Contact Us",
+    "viewServices": "View Services"
+  },
+  "services": {
+    "title": "Services",
+    "items": [
+      {
+        "title": "IT Services",
+        "description": "Technical support, equipment maintenance, and IT infrastructure solutions."
+      },
+      {
+        "title": "Web Development",
+        "description": "Modern, responsive, and search engine optimized websites."
+      },
+      {
+        "title": "Digital Marketing",
+        "description": "Digital strategies to increase your online presence."
+      },
+      {
+        "title": "Automation (n8n)",
+        "description": "Business process automation to optimize workflows."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "items": [
+      {
+        "title": "Modern E-commerce",
+        "description": "Responsive e-commerce platform.",
+        "category": "Web Development"
+      },
+      {
+        "title": "CRM System",
+        "description": "Automated customer relationship management.",
+        "category": "Automation"
+      },
+      {
+        "title": "Digital Campaign",
+        "description": "Comprehensive digital marketing strategy.",
+        "category": "Digital Marketing"
+      },
+      {
+        "title": "Automated Bots",
+        "description": "24/7 automated customer service.",
+        "category": "Automation"
+      }
+    ]
+  },
+  "footer": {
+    "brand": "siclox",
+    "links": {
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "contact": "Contact"
+    },
+    "copyright": "© {{year}} siclox. All rights reserved."
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  }
+}

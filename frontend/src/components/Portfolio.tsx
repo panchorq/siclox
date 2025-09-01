@@ -1,33 +1,23 @@
+import { useTranslation } from 'react-i18next';
+
+interface Project {
+  title: string;
+  description: string;
+  category: string;
+}
+
 const Portfolio = () => {
-  const projects = [
-    {
-      title: 'E-commerce Moderno',
-      description: 'Plataforma de comercio electrónico responsiva.',
-      category: 'Desarrollo Web'
-    },
-    {
-      title: 'Sistema CRM',
-      description: 'Gestión de relaciones con clientes automatizada.',
-      category: 'Automatización'
-    },
-    {
-      title: 'Campaña Digital',
-      description: 'Estrategia integral de marketing digital.',
-      category: 'Marketing Digital'
-    },
-    {
-      title: 'Bots Automatizados',
-      description: 'Automatiza tu atención 24/7.',
-      category: 'Automatización'
-    }
-  ];
+  const { t } = useTranslation();
+  
+  // Get projects from translations
+  const projects = t('portfolio.items', { returnObjects: true }) as Project[];
 
   return (
     <section id="portfolio" className="py-20">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-4xl font-light mb-6 text-foreground">
-            Portfolio
+            {t('portfolio.title')}
           </h2>
         </div>
 
@@ -39,8 +29,12 @@ const Portfolio = () => {
                   {project.category}
                 </span>
               </div>
-              <h3 className="text-lg font-medium mb-3 text-foreground">{project.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+              <h3 className="text-lg font-medium mb-3 text-foreground">
+                {project.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {project.description}
+              </p>
             </div>
           ))}
         </div>

@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import LanguageSelector from './LanguageSelector';
 
 const Header = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -41,26 +44,29 @@ const Header = () => {
               onClick={() => scrollToSection('services')}
               className="text-muted-foreground hover:text-foreground underline-minimal transition-colors"
             >
-              Servicios
+              {t('nav.services')}
             </button>
             <button 
               onClick={() => scrollToSection('portfolio')}
               className="text-muted-foreground hover:text-foreground underline-minimal transition-colors"
             >
-              Portfolio
+              {t('nav.portfolio')}
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
               className="text-muted-foreground hover:text-foreground underline-minimal transition-colors"
             >
-              Contacto
+              {t('nav.contact')}
             </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="btn-minimal"
-            >
-              Contáctanos
-            </button>
+            <div className="flex items-center space-x-2">
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="btn-minimal"
+              >
+                {t('nav.contactUs')}
+              </button>
+              <LanguageSelector />
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -81,26 +87,31 @@ const Header = () => {
               onClick={() => scrollToSection('services')}
               className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors"
             >
-              Servicios
+              {t('nav.services')}
             </button>
             <button 
               onClick={() => scrollToSection('portfolio')}
               className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors"
             >
-              Portfolio
+              {t('nav.portfolio')}
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
               className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors"
             >
-              Contacto
+              {t('nav.contact')}
             </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="btn-minimal w-full mt-4"
-            >
-              Contáctanos
-            </button>
+            <div className="space-y-4 mt-4">
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="btn-minimal w-full"
+              >
+                {t('nav.contactUs')}
+              </button>
+              <div className="w-full flex justify-center">
+                <LanguageSelector />
+              </div>
+            </div>
           </nav>
         </div>
       </div>

@@ -1,4 +1,8 @@
+import { useTranslation } from 'react-i18next';
+
 const Hero = () => {
+  const { t } = useTranslation();
+  
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
@@ -12,15 +16,14 @@ const Hero = () => {
         <div className="max-w-2xl mx-auto">
           {/* Main Heading */}
           <h1 className="text-3xl md:text-5xl font-light mb-6 leading-tight text-foreground">
-            Soluciones Tecnológicas
+            {t('hero.title1')}
             <br />
-            <span className="font-normal">a tu Medida</span>
+            <span className="font-normal">{t('hero.title2')}</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-            Servicios de informática, desarrollo web, marketing digital y automatización 
-            para potenciar tu negocio.
+            {t('hero.subtitle')}
           </p>
 
           {/* CTA Buttons */}
@@ -29,13 +32,13 @@ const Hero = () => {
               onClick={scrollToContact}
               className="btn-minimal"
             >
-              Contactar
+              {t('hero.contact')}
             </button>
             <button 
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               className="text-muted-foreground hover:text-foreground underline-minimal transition-colors"
             >
-              Ver Servicios
+              {t('hero.viewServices')}
             </button>
           </div>
         </div>
